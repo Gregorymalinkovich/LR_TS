@@ -1,19 +1,26 @@
 import AppController from '../controller/controller.js';
 import { AppView } from '../view/appView.js';
+
 class App {
-    controller;
-    view;
+    private controller: AppController;
+    private view: AppView;
+
     constructor() {
         this.controller = new AppController();
         this.view = new AppView();
     }
-    start() {
+
+    public start(): void {
         const sourcesContainer = document.querySelector('.sources');
+        
         if (sourcesContainer) {
-            sourcesContainer.addEventListener('click', (e) => this.controller.getNews(e, (data) => this.view.drawNews(data)));
+            sourcesContainer.addEventListener('click', (e: Event) => 
+                this.controller.getNews(e, (data) => this.view.drawNews(data))
+            );
         }
+        
         this.controller.getSources((data) => this.view.drawSources(data));
     }
 }
+
 export default App;
-//# sourceMappingURL=app.js.map

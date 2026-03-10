@@ -1,4 +1,5 @@
 import Loader from './loader.js';
+
 class AppLoader extends Loader {
     constructor() {
         // Прописываем адрес и ключ ПРЯМО ЗДЕСЬ строками
@@ -7,5 +8,5 @@ class AppLoader extends Loader {
         });
     }
 }
+
 export default AppLoader;
-//# sourceMappingURL=appLoader.js.map
